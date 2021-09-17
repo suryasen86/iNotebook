@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import noteContext from '../context/notes/NoteContext';
 const Login = () => {
     const context = useContext(noteContext)
-    const {showalert}=context
+    const {showalert ,host}=context
     const [eye, seteye] = useState(false)
     let history=useHistory();
     const [credentials, setcredentials] = useState({
@@ -20,7 +20,7 @@ const Login = () => {
         console.log(credentials)
 
 
-        const response = await fetch("http://localhost:5000/api/auth/login/", {
+        const response = await fetch( `${host}/api/auth/login/`, {
             method: 'POST', // *GET, POST, PUT, DELETE, etc. 
             headers: {
               'Content-Type': 'application/json',

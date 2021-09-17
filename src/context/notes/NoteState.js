@@ -31,7 +31,8 @@ const NoteState =(props)=>{
     //         })
     //     }, 3000);
     // }
-    const host="http://localhost:5000"
+    // const host="http://localhost:5000"
+    const host="https://guarded-brushlands-70326.herokuapp.com"
 // let a= localStorage.getItem('token')
 // console.log(a)
     const initialnotes=[];
@@ -101,7 +102,7 @@ const NoteState =(props)=>{
  
     return (
         
-            <noteContext.Provider value={{notes,setnotes , alert, showalert, addNote,editNote,deleteNote ,getNote}}>
+            <noteContext.Provider value={{notes,setnotes , alert,  host,showalert, addNote,editNote,deleteNote ,getNote}}>
                 {props.children}
             </noteContext.Provider>
     )

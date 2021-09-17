@@ -6,7 +6,7 @@ const Singup = () => {
     const [eye, seteye] = useState(true)
     let history=useHistory();
     const context = useContext(noteContext)
-    const {showalert}=context
+    const {showalert ,host}=context
     const [credentials, setcredentials] = useState({
         name:'',
        email:"",
@@ -21,7 +21,7 @@ const Singup = () => {
         e.preventDefault()
         // console.log(credentials) 
 
-        const response = await fetch("http://localhost:5000/api/auth/createuser/", {
+        const response = await fetch(`${host}/api/auth/createuser/`, {
             method: 'POST', // *GET, POST, PUT, DELETE, etc. 
             headers: {
               'Content-Type': 'application/json',
@@ -44,12 +44,12 @@ const Singup = () => {
       
         if(eye===true){
             seteye(false)
-            console.log("false")
+       
             document.getElementById("password").type="text"
             document.getElementById("cpassword").type="text"
         }
         else{
-            seteye(true)
+        
             console.log("true")
             document.getElementById("password").type="password"
             document.getElementById("cpassword").type="password"
