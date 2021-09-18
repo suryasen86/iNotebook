@@ -9,8 +9,8 @@ function Alert() {
         <div style={{height:"100px"}}>
             
         {alert && <div className={`alert alert-${alert.type} alert-dismissible fade show`} role="alert">
-          <strong>{alert.type==="danger"?"error":alert.type}</strong>  {alert.msg}
-          
+        {alert.msg}
+        {/* <strong>{alert.type==="danger"?"error":alert.type}</strong>   */}
       </div>}
         </div>
   )
